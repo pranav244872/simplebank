@@ -58,4 +58,7 @@ migratedown:
 sqlc:
 	sudo docker run --rm -v ./:/src -w /src sqlc/sqlc generate
 
-.PHONY: createdb dropdb selldb migrateup migratedown sqlc
+test:
+	go test -v -cover ./...
+
+.PHONY: createdb dropdb selldb migrateup migratedown sqlc test
